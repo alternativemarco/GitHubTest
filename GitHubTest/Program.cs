@@ -8,6 +8,7 @@ namespace GitHubTest
 {
     class Program
     {
+        static Random r = new Random();
         static void Main(string[] args)
         {
             Console.WriteLine("Hogy hívnak? ");
@@ -24,7 +25,16 @@ namespace GitHubTest
                 Console.WriteLine("Hát akko kabe!");
             }
 
-            //TODO: csijjag
+            Console.WriteLine("Nesze itt van 100 csillag: ");
+            for (int i = 0; i < 100; i++)
+            {
+                Console.SetCursorPosition(
+                    r.Next(Console.WindowWidth),
+                    r.Next(Console.WindowHeight));
+                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("*");
+            }
+
             Console.ReadKey();
         }
     }
